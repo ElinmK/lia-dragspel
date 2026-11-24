@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragspel med text i HTML och CSS</title>
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+
+  <section class="dragspel" aria-label="Produktinformation">
+
+    <!-- Flik 1: Kort text -->
+    <article class="flik">
+      <input type="checkbox" id="flik-ett" class="flik-valjare">
+      <label for="flik-ett" class="flik-rubrik">
+        <span>Beskrivning</span>
+        <span class="flik-ikon" aria-hidden="true"></span>
+      </label>
+      <div class="flik-innehall">
+        <div class="flik-inre">
+          <div class="flik-text">
+            <p>En lätt och mångsidig löparsko som är utformad för att ge mjuk dämpning och skön komfort under både korta och långa pass.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Flik 2: Medellång text -->
+    <article class="flik">
+      <input type="checkbox" id="flik-tva" class="flik-valjare">
+      <label for="flik-tva" class="flik-rubrik">
+        <span>Teknologi och egenskaper</span>
+        <span class="flik-ikon" aria-hidden="true"></span>
+      </label>
+      <div class="flik-innehall">
+        <div class="flik-inre">
+          <div class="flik-text">
+            <p>Ovandelen i ventilerande mesh håller fötterna svala även under intensiva träningspass och anpassar sig smidigt efter fotens rörelser.</p>
+            <p>Mellansulan ger en responsiv studs i varje steg samtidigt som yttersulan i slitstarkt gummi ger ett pålitligt grepp på asfalt och grusvägar.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Flik 3: Text med stor bild -->
+    <article class="flik">
+      <input type="checkbox" id="flik-tre" class="flik-valjare">
+      <label for="flik-tre" class="flik-rubrik">
+        <span>Detaljvy och konstruktion</span>
+        <span class="flik-ikon" aria-hidden="true"></span>
+      </label>
+      <div class="flik-innehall">
+        <div class="flik-inre">
+          <div class="flik-text">
+            <p>Här ser du en närmare översikt av sulans uppbyggnad och den förstärkta hälkappan som ger extra stabilitet vid landning.</p>
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80"
+              alt="Närbild på en röd löparsko"
+              class="flik-bild"
+            >
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Flik 4: Längre text -->
+    <article class="flik">
+      <input type="checkbox" id="flik-fyra" class="flik-valjare">
+      <label for="flik-fyra" class="flik-rubrik">
+        <span>Skötselråd och hållbarhet</span>
+        <span class="flik-ikon" aria-hidden="true"></span>
+      </label>
+      <div class="flik-innehall">
+        <div class="flik-inre">
+          <div class="flik-text">
+            <p>För att dina skor ska hålla formen och dämpningen så länge som möjligt rekommenderar vi att du rengör dem för hand med ljummet vatten och en mjuk borste.</p>
+            <p>Undvik att tvätta skorna i tvättmaskin eller torka dem i torktumlare, eftersom hög värme kan försämra limmet och skummaterialet i mellansulan.</p>
+            <p>Ta gärna ur innersulan efter blöta löppass och låt skorna lufttorka i rumstemperatur över natten.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+</body>
+</html>

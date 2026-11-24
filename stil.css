@@ -1,0 +1,125 @@
+/* Grundinställningar för sidan */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+  padding: 3rem 1rem;
+  line-height: 1.6;
+}
+
+/* Behållare för hela dragspelsmenyn */
+.dragspel {
+  max-width: 720px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-top: 1px solid #d9d9d9;
+}
+
+/* Enskild flik */
+.flik {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+/* Döljer kryssrutan visuellt men behåller funktionen */
+.flik-valjare {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Den klickbara rubriken med plus-ikon */
+.flik-rubrik {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.flik-rubrik:hover {
+  color: #0033a0;
+}
+
+/* Plus-ikonen till höger */
+.flik-ikon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.flik-ikon::before,
+.flik-ikon::after {
+  content: "";
+  position: absolute;
+  background-color: currentColor;
+  transition: transform 0.3s ease;
+}
+
+/* Vågrätt streck i plusset */
+.flik-ikon::before {
+  top: 7px;
+  left: 0;
+  width: 16px;
+  height: 2px;
+}
+
+/* Lodrätt streck i plusset */
+.flik-ikon::after {
+  top: 0;
+  left: 7px;
+  width: 2px;
+  height: 16px;
+}
+
+/* Roterar det lodräta strecket så att plus blir till minus när fliken är öppen */
+.flik-valjare:checked + .flik-rubrik .flik-ikon::after {
+  transform: rotate(90deg);
+}
+
+/* Yttre behållare för innehållet som styr animationen */
+.flik-innehall {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+/* Öppnar innehållet mjukt när kryssrutan är markerad */
+.flik-valjare:checked ~ .flik-innehall {
+  grid-template-rows: 1fr;
+}
+
+/* Inre behållare som döljer innehållet när radhöjden är 0fr */
+.flik-inre {
+  overflow: hidden;
+}
+
+/* Text- och bildmarginaler inuti den utfällda fliken */
+.flik-text {
+  padding: 0 0.5rem 1.5rem 0.5rem;
+  color: #444444;
+}
+
+.flik-text p + p {
+  margin-top: 0.75rem;
+}
+
+/* Stor responsiv bild i den tredje fliken */
+.flik-bild {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 6px;
+}
